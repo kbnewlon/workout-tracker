@@ -1,19 +1,20 @@
+//creates schema for workout collection
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const WorkoutSchema = new Schema({
-   name: {
+const workoutSchema = new Schema({
+  name: {
     type: String,
     trim: true,
     required: "Workout name required"
   },
-exercise: [
+  exercise: [
     {
-        type: Schema.Types.ObjectId,
-        ref: "Exercise"
+      type: Schema.Types.ObjectId,
+      ref: "Exercise"
     }
-],
-  
+  ],
+
   dateCreated: {
     type: Date,
     default: Date.now,
@@ -21,6 +22,6 @@ exercise: [
   }
 });
 
-const User = mongoose.model("Workouts", WorkoutSchema);
+const User = mongoose.model("Workout", workoutSchema);
 
-module.exports = Workouts;
+module.exports = Workout;
