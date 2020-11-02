@@ -1,32 +1,73 @@
-body {
-    
-}
+/* body {
+    background-image: url("./images/nazi-zombie.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center;
+} */
 
-/* Right-aligned section inside the top navigation */
+
 .navbar-nav{
     margin-left: auto;
 }
 
 .title{
     text-align: center;
+    color: white;
     
 }
+
+.page-holder {
+    min-height: 100vh;
+  
+  }
+  
+.bg-cover {
+    background-size: cover !important;
+  }
+
 h1{
     font-size: 50px;
-    margin-top: 70px;
+    margin-top: 120px;
+    color: white;
+}
+
+h3{
+    text-align: center;
+    color: white;
 }
 
 footer {
     /* background-color: black; */
     height: 70px;
-    color: white;
+    /* color: white; */
     line-height: 3;
     font-size: 14px;
+    background-color: black;
   }
 
   .footer-text {
     text-align: center;
     padding-top: 20px;
     font-weight: 100;
+    color: white;
   
+  }
+
+  .lastWorkout{
+      border: solid;
+      width: 20em;
+      margin: 1em auto 1em auto;
+      padding: 175px;
+      color: white;
+      
+  }
+
+  .index{
+      width: 100%;
+      height: auto;
+  }
+
+  .btn-color{
+      background-color: black;
+      border: none;
   }
