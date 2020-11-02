@@ -1,0 +1,26 @@
+{
+  "name": "workout-tracker",
+  "version": "1.0.0",
+  "description": "Use this app to view, create, and track daily workouts.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbnewlon/workout-tracker.git"
+  },
+  "author": "kbnewlon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kbnewlon/workout-tracker/issues"
+  },
+  "homepage": "https://github.com/kbnewlon/workout-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "logger": "0.0.1",
+    "mongojs": "^3.1.0",
+    "morgan": "^1.10.0"
+  }
+}
