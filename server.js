@@ -9,8 +9,14 @@ const express = require("express");
 const mongojs = require("mongojs");
 const logger = require("morgan");
 
-const databaseUrl = "warmup";
-const collections = ["books"];
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+const databaseUrl = "fitnessTracker";
+const collections = ["workouts"];
 const db = mongojs(databaseUrl, collections);
 
 const app = express();
