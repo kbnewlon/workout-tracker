@@ -25,6 +25,23 @@ The user should be able to:
   * Add new exercises to a new workout plan.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
 
   * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
