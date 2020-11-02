@@ -1,19 +1,9 @@
-//This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express, along with the front end to interact with said routes.  
-//The user should be able to:
-
-//Add exercises to a previous workout plan.
-
-//Add new exercises to a new workout plan.
-
 const express = require("express");
 const mongojs = require("mongojs");
 const logger = require("morgan");
+const mongoose = require("mongoose");
+const db = require("./models");
 
-// Set Handlebars.
-var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
 const databaseUrl = "fitnessTracker";
 const collections = ["workouts"];
@@ -26,32 +16,31 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+mongoose.connect(process.env.MONGOB_URI || "mongob://localhost/workoutdb", { useNewUrlParser: true});
+
 db.on("error", error => {
   console.log("Database Error:", error);
 });
 
-app.post("/submit", ({ body }, res) => {
-  const book = body;
-
-  book.read = false;
-
-  db.books.save(book, (error, saved) => {
+//this route posts a new workout
+app.post("/workout", ({ body }, res) => {
+  db.Workout.create(body)
+  .then(dbworkout => {
+      res.json(dbworkout);
+  }).catch(error, data)
     if (error) {
-      console.log(error);
+      res.status(400).json(err);
     } else {
-      res.send(saved);
+      res.send(data);
     }
   });
-});
 
-app.get("/read", (req, res) => {
-  db.books.find({ read: true }, (error, found) => {
-    if (error) {
-      console.log(error);
-    } else {
-      res.json(found);
-    }
-  });
+//this route finds a workout 
+app.get("/workout", (req, res) => {
+  db.Exercise.find({})
+  .then(dbworkout => {
+      res.json(dbworkout)
+  }),
 });
 
 app.get("/unread", (req, res) => {

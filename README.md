@@ -1,18 +1,58 @@
-# Workout-Tracker
-Use this app to view, create, and track daily workouts. 
+# Fitness Tracker 2020
+Use this app to view, create, and track daily workouts to get your ready for the impending apocalypse.
+
+![issues](https://img.shields.io/github/issues/kbnewlon/workout-tracker)
+![GitHub top language](https://img.shields.io/github/languages/top/kbnewlon/workout-tracker)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  
+## Description 
+ Fitness Tracker 2020 uses a Mongo database with a Mongoose schema, routes are handled with Express along with front end connections to the aforementioned routes. Use this application to view, create and track daily workouts. The user can log multiple exercises in a workout on a given day. Fitness Tracker 2020 allows the user to be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, the user can track the distance traveled. 
+
+<br><br>
+
+ "Blessed be our New Founding Fathers and America, a nation reborn. May God be with you all" -The Purge
+
+## Table of Contents 
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [Visuals](#Visuals)
+* [Links](#Links)
+* [Questions](#Questions)
+
+## Installation
+1. Use 'git clone git@github.com:kbnewlon/workout-tracker.git' to clone the repo
+2. Install necessary dependencies with 'npm install'
+3. Start the program with 'npm start' or 'node server.js'
+
+## Usage
+1. 
+
+## License
+Copyright (c) 2020, Kayla Newlon. (MIT License)
+
+## Contributing 
+No guidelines at this time 
+
+## Tests
+No tests available 
+
+## Visuals
+![]()
+## Links
+To Repo: https://github.com/kbnewlon/workout-tracker
+<br>Visit the deployed app on Heroku to demo: 
+ 
+
+## Questions 
+Please contact me if you have any questions at:
+<br>Email: kayla.b.newlon@gmail.com
+<br>Github: https://github.com/kbnewlon
 
 
-# Unit 17 Nosql Homework: Workout Tracker
 
-For this assignment, you'll create a workout tracker.  This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express, along with the front end to interact with said routes.  
-
-## User Story
-
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
-
-## Business Context
-
-A consumer will reach their fitness goals more quickly when they track their workout progress.
 
 ## Acceptance Criteria
 
@@ -25,48 +65,13 @@ The user should be able to:
   * Add new exercises to a new workout plan.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
 
   * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
 
   * [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)
 
-## Commit Early and Often
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for the following two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-2. Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We want you to have well over 200 commits by graduation, so commit early and often!
 
 ## Submission on BCS
 

@@ -1,3 +1,32 @@
 body {
-    background-color: salmon;
+    
 }
+
+/* Right-aligned section inside the top navigation */
+.navbar-nav{
+    margin-left: auto;
+}
+
+.title{
+    text-align: center;
+    
+}
+h1{
+    font-size: 50px;
+    margin-top: 70px;
+}
+
+footer {
+    /* background-color: black; */
+    height: 70px;
+    color: white;
+    line-height: 3;
+    font-size: 14px;
+  }
+
+  .footer-text {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 100;
+  
+  }
