@@ -7,7 +7,7 @@ Use this app to view, create, and track daily workouts to get your ready for the
   
 ## Description 
  Fitness Tracker 2020 uses a Mongo database with a Mongoose schema, routes are handled with Express along with front end connections to the aforementioned routes. Use this application to view, create and track daily workouts. The user can log multiple exercises in a workout on a given day. Fitness Tracker 2020 allows the user to be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, the user can track the distance traveled. 
-<br>
+<br><br>
  "Blessed be our New Founding Fathers and America, a nation reborn. May God be with you all" -The Purge
 
 ## Table of Contents 
