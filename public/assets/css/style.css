@@ -45,11 +45,18 @@ footer {
   }
 
   .lastWorkout{
-      border: solid;
+      border: solid white;
       width: 20em;
       margin: 1em auto 1em auto;
-      padding: 175px;
-      color: white;
+      padding: auto;
+      /* color: white; */
+      /* background-color: black; */
+      
+  }
+
+  .list-group-item{
+      /* background-color: black; */
+      color: black;
       
   }
 
@@ -62,3 +69,4 @@ footer {
       background-color: black;
       border: none;
   }
+

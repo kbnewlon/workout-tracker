@@ -1,18 +1,18 @@
 
 
 
+// function createNewWorkout{
 
 
-// make a get request to grab the last workout (/workout) and then create the card dynamically with the results from the ajx call
+// }
+
+// function updateWorkout{
 
 
-function getWorkout() {
+// }
 
 
-
-
-}
-
+// get request that grabs last workout and dynamically creates card to display
 function getLastWorkout() {
 
     $.ajax({
@@ -21,23 +21,84 @@ function getLastWorkout() {
     }).then(data => {
         console.log(data);
         $(".lastWorkout").html(`
-        <ul class="list-group">
-        <li class="list-group-item">date:${data[0].dateCreated}</li>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">date: ${data[0].dateCreated}</li>
         <li class="list-group-item">exercise name: ${data[0].exercises[0].name}</li>
-        <li class="list-group-item">Third item</li>
-        <li class="list-group-item">First item</li>
-        <li class="list-group-item">Second item</li>
-        <li class="list-group-item">Third item</li>
-        <li class="list-group-item">First item</li>
-        <li class="list-group-item">Second item</li>
+        <li class="list-group-item">exercise type: ${data[0].exercises.type}</li>
+        <li class="list-group-item">weight: ${data[0].exercises.weight}</li>
+        <li class="list-group-item">sets: ${data[0].exercises.sets}</li>
+        <li class="list-group-item">reps: ${data[0].exercises.reps}</li>
+        <li class="list-group-item">duration: ${data[0].exercises.duration}</li>
+        <li class="list-group-item">distance: ${data[0].exercises.distance}</li>
       </ul>
         `)
     })
 
 
+//
 
 
 }
+//i want to be able to update the workout
+//update 
+$("#continue-btn").on("click", function (event) {
+    event.preventDefault();
+    $.ajax({
+        type: "PUT",
+        url: "/api/exercise",
+        dataType: "json",
+        data: {
+            name: $("#name").val(),
+            type: $("#type").val(),
+            weight: $("#weight").val(),
+            sets: $("#sets").val(),
+            reps: $("#reps").val(),
+            duration: $("#duration").val(),
+            distance: $("#distance").val(),
+
+
+        }
+    })
+        .then(function (data) {
+            console.log(data);
+            getLastWorkout();
+         
+        }
+        );
+    return false;
+
+
+});
+
+//i want to be able to add a new workout to the database
+//add
+$("#newWorkout-btn").on("click", function (event) {
+    event.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "/api/exercise",
+        dataType: "json",
+        data: {
+            name: $("#name").val(),
+            type: $("#type").val(),
+            weight: $("#weight").val(),
+            sets: $("#sets").val(),
+            reps: $("#reps").val(),
+            duration: $("#duration").val(),
+            distance: $("#distance").val(),
+
+
+        }
+    })
+        .then(function (data) {
+            console.log(data);
+            // getWorkout();
+         
+        }
+        );
+    return false;
+});
+
 
 
 getLastWorkout();
