@@ -26,7 +26,7 @@ Use this app to view, create, and track daily workouts to get your ready for the
 3. Start the program with 'npm start' or 'node server.js'
 
 ## Usage
-1. 
+1. Run mongod in terminal 
 
 ## License
 Copyright (c) 2020, Kayla Newlon. (MIT License)

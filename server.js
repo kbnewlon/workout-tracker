@@ -1,36 +1,38 @@
+//required dependencies for app to function
 const express = require("express");
-const mongojs = require("mongojs");
-const logger = require("morgan");
 const mongoose = require("mongoose");
-const db = require("./models");
+const exphbs = require("express-handlebars");
+
+//set up PORT
+const PORT = process.env.PORT || 3000
 
 //calls express
 const app = express();
 
-//sets up port
-const PORT = process.env.PORT || 3000;
-
-//set up logger
-app.use(logger("dev"));
+//calls for use of handlebars for layout
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 //sets up middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//use public folder
 app.use(express.static("public"));
 
-//sets up mongob connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true});
+//pulls in routes from the controller file
+const routes = require("./controller/workout-controller.js");
+app.use(routes);
 
-//pulls in routes js
-app.use(require("./routes/api-routes.js"));
-app.use(require("./routes/html-routes.js"));
-
-//logs err if err
-// db.on("error", error => {
-//   console.log("Database Error:", error);
-// });
+//sets up connection through mongo
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+});
 
 //listen for port
-app.listen(3000, () => {
-  console.log("App running on port 3000!");
-});
+app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}!`);
+})

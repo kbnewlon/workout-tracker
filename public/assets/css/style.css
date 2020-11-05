@@ -1,32 +1,8 @@
-.navbar-nav{
-    margin-left: auto;
-}
-
-.title{
-    text-align: center;
-    color: white;
-    
-}
-
-.page-holder {
-    min-height: 100vh;
-  
-  }
-  
-.bg-cover {
+.page-holder{
+    height: 100vh;
+    width: auto;
     background-size: cover !important;
-    
-  }
-
-h1{
-    font-size: 50px;
-    margin-top: 120px;
-    color: white;
-}
-
-h3{
-    text-align: center;
-    color: white;
+    /* background-image: url(/assets/images/nazi-zombie.jpg); */
 }
 
 footer {
@@ -36,7 +12,7 @@ footer {
     background-color: black;
   }
 
-  .footer-text {
+.footer-text {
     text-align: center;
     padding-top: 20px;
     font-weight: 100;
@@ -44,29 +20,41 @@ footer {
   
   }
 
-  .lastWorkout{
-      border: solid white;
-      width: 20em;
-      margin: 1em auto 1em auto;
-      padding: auto;
-      /* color: white; */
-      /* background-color: black; */
-      
-  }
+.btn-color{ 
+    background-color: black;
+    border: none;
+    color: white;
+}
 
-  .list-group-item{
-      /* background-color: black; */
-      color: black;
-      
-  }
+.userInput{
+    /* display: block;
+    margin-right: auto;
+    margin-left: auto; */
+    position: absolute;
+    /* margin:auto; */
+}
 
-  .index{
-      width: 100%;
-      height: auto;
-  }
+.index{
+    width: 100%;
+    height: auto;
+}
 
-  .btn-color{
-      background-color: black;
-      border: none;
-  }
+.title{
+    text-align: center;
+    color: white;  
+}
 
+h1{
+    font-size: 50px;
+    margin-top: 120px;
+    color: white;
+    margin-top: 200px;
+}
+
+.navbar-nav{
+    margin-left: auto;
+}
+
+.new-workout{
+    justify-content: center;
+}

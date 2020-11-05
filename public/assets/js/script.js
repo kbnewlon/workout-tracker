@@ -1,104 +1,99 @@
+$(function () {
+    //new workout button
+    $(".new-workout").on("submit", function (event) {
+        event.preventDefault();
+        const newName = $("#reg-name-input").val().trim();
+        $.ajax({
+            url: "/api/workouts",
+            method: "POST",
+            data: { name: newName }
+        }).then((dbWorkout) => {
+            console.log(dbWorkout);
+            location.reload();
+        });
+    });
 
-
-
-// function createNewWorkout{
-
-
-// }
-
-// function updateWorkout{
-
-
-// }
-
-
-// get request that grabs last workout and dynamically creates card to display
-function getLastWorkout() {
-
-    $.ajax({
-        url: "/api/workout",
-        method: "GET"
-    }).then(data => {
-        console.log(data);
-        $(".lastWorkout").html(`
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item">date: ${data[0].dateCreated}</li>
-        <li class="list-group-item">exercise name: ${data[0].exercises[0].name}</li>
-        <li class="list-group-item">exercise type: ${data[0].exercises.type}</li>
-        <li class="list-group-item">weight: ${data[0].exercises.weight}</li>
-        <li class="list-group-item">sets: ${data[0].exercises.sets}</li>
-        <li class="list-group-item">reps: ${data[0].exercises.reps}</li>
-        <li class="list-group-item">duration: ${data[0].exercises.duration}</li>
-        <li class="list-group-item">distance: ${data[0].exercises.distance}</li>
-      </ul>
-        `)
-    })
-
-
-//
-
-
-}
-//i want to be able to update the workout
-//update 
-$("#continue-btn").on("click", function (event) {
-    event.preventDefault();
-    $.ajax({
-        type: "PUT",
-        url: "/api/exercise",
-        dataType: "json",
-        data: {
-            name: $("#name").val(),
-            type: $("#type").val(),
-            weight: $("#weight").val(),
-            sets: $("#sets").val(),
-            reps: $("#reps").val(),
-            duration: $("#duration").val(),
-            distance: $("#distance").val(),
-
-
+    // update exercise object on submit
+    $(".update-form").on("submit", function (event) {
+        event.preventDefault();
+        const updateObj = {
+            _id: $(this).attr("id"),
+            name: event.target[0].value.trim(),
+            count: event.target[1].value.trim(),
+            unit: event.target[2].value.trim(),
+            notes: event.target[3].value.trim()
         }
-    })
-        .then(function (data) {
-            console.log(data);
-            getLastWorkout();
-         
+        console.table(updateObj);
+        $.ajax({
+            url: "/api/exercises",
+            method: "PUT",
+            data: updateObj
+        }).then((dbExercise) => {
+            location.reload();
+            console.log(dbExercise);
+        });
+    });
+
+    //creates new exercise on submit click
+    $(".new-exercise").on("submit", function (event) {
+        event.preventDefault();
+        console.log($(this).attr("id"));
+        const newExerObj = {
+            _id: $(this).attr("id"),
+            name: event.target[0].value.trim(),
+            count: event.target[1].value.trim(),
+            unit: event.target[2].value.trim(),
+            notes: event.target[3].value.trim()
         }
-        );
-    return false;
+        $.ajax({
+            url: "/api/exercises",
+            method: "POST",
+            data: newExerObj
+        })
+            .then(dbExercise => {
+                $.ajax({
+                    url: "",
+                    context: document.body,
+                    success: function (data, err) {
+                        $(this).html(data);
+                    }
+                });
+            });
+    })
+    //deletes exercise on click 
+    $(".exer-delete").click(function (event) {
+        event.preventDefault();
+        console.log($(this).attr("id"))
 
+        $.ajax({
+            url: "/api/exercises",
+            method: "DELETE",
+            data: { _id: $(this).attr("id") }
+        }).then((dbExercise) => {
+            $.ajax({
+                url: "/",
+                context: document.body,
+                success: function (data, err) {
+                    if (err) console.log(err);
+                    $(this).html(data);
+                }
+            });
 
+        });
+        setTimeout(function () { location.reload(); }, 100);
+    });
+
+    //delete workout on click 
+    $(".workout-delete").click(function (event) {
+        event.preventDefault();
+        console.log($(this).attr("id"));
+        $.ajax({
+            url: "/api/workouts",
+            method: "DELETE",
+            data: { _id: $(this).attr("id") }
+        }).then((dbWorkout) => {
+            console.log('script side')
+        })
+        setTimeout(function () { location.reload(); }, 100);
+    });
 });
-
-//i want to be able to add a new workout to the database
-//add
-$("#newWorkout-btn").on("click", function (event) {
-    event.preventDefault();
-    $.ajax({
-        type: "POST",
-        url: "/api/exercise",
-        dataType: "json",
-        data: {
-            name: $("#name").val(),
-            type: $("#type").val(),
-            weight: $("#weight").val(),
-            sets: $("#sets").val(),
-            reps: $("#reps").val(),
-            duration: $("#duration").val(),
-            distance: $("#distance").val(),
-
-
-        }
-    })
-        .then(function (data) {
-            console.log(data);
-            // getWorkout();
-         
-        }
-        );
-    return false;
-});
-
-
-
-getLastWorkout();
