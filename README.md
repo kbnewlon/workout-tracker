@@ -38,10 +38,13 @@ No guidelines at this time
 No tests available 
 
 ## Visuals
-![]()
+![screenshot of homepage](public/assets/images/screenshot_homepage.PNG);
+![screenshot of workout](public/assets/images/screenshot_workout.PNG);
+![screenshot of entered workout](public/assets/images/screenshot_entered_workout.PNG);
+
 ## Links
 To Repo: https://github.com/kbnewlon/workout-tracker
-<br>Visit the deployed app on Heroku to demo: 
+<br>Visit the deployed app on Heroku to demo: https://preparingfortheapocalypse2020.herokuapp.com/
  
 
 ## Questions 
@@ -49,18 +52,6 @@ Please contact me if you have any questions at:
 <br>Email: kayla.b.newlon@gmail.com
 <br>Github: https://github.com/kbnewlon
 
-
-
-
-## Acceptance Criteria
-
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
-
-The user should be able to:
-
-  * Add exercises to a previous workout plan.
-
-  * Add new exercises to a new workout plan.
 
 
 To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:

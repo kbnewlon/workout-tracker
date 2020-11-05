@@ -4,22 +4,22 @@ body {
 .page-holder{
     height: 100%;
     width: auto;
+    display: center;
     background-size: cover !important;
     background-color: black;
 }
 
 footer {
-    height: 70px;
     line-height: 3;
     font-size: 14px;
     background-color: black;
-    margin-top: 100px;
+    margin-top: 220px;
   }
 
 .footer-text {
     text-align: center;
     padding-top: 20px;
-    font-weight: 100;
+    font-weight: 10;
     color: white;
   
   }
