@@ -9,7 +9,7 @@
                 <h2 class="card-title">{{name}}</h2>
             </div>
             <div class="col-md-2">
-                <button class="workout-delete btn btn-danger" id="{{_id}}">delete
+                <button class="workout-delete btn btn-dark" id="{{_id}}">delete
                     workout</button>
             </div>
         </div>
@@ -19,12 +19,12 @@
                     <div class="form-group col-md-6 row">
                         <label class="col-md-3" for="exer-name">exercise:</label>
                         <input class="form-control col-md-8" type="text" name="exer-name"
-                            placeholder="DB Bench Press, DB Reverse Fly, etc.">
+                            placeholder="running away from white supremacists, etc.">
                     </div>
                     <div class="form-group col-md-6 row">
-                        <label class="col-md-6" for="exer-count">enter sets and reps:</label>
+                        <label class="col-md-3" for="exer-count">enter sets/reps:</label>
                         <input class="col-md-3 form-control" type="number" name="exer-count" placeholder="# of sets">
-                        <input class="col-md-3 form-control" type="text" name="exer-count" placeholder="reps & weight">
+                        <input class="col-md-3 form-control" type="text" name="exer-count" placeholder="reps/weight">
                     </div>
                 </div>
                 <div class="row">
@@ -35,11 +35,11 @@
                             </div>
                             <div class="col-md-10">
                                 <textarea class="form-control" type="text" name="exer-notes"
-                                    placeholder="Notes about this workout" rows="2"></textarea>
+                                    placeholder="a place for notes if you want" rows="2"></textarea>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-success" type="submit">submit</button>
+                            <button class="btn btn-dark" type="submit">submit</button>
                         </div>
                     </div>
                 </div>
@@ -59,6 +59,7 @@
         <h3 class="card-title">no workouts entered</h3>
         <br>
         <p class="card-text">begin your training for the apocalypse</p>
+        <br>
     </div>
     {{/if}}
 

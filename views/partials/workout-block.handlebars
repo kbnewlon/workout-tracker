@@ -5,12 +5,12 @@
     <form class="update-form" id="{{_id}}">
 
         <input type="text" class="exercise-name form-control" value="{{name}}">
-        <p class="exercise-count">Repeat for <input type="number" class="form-control" value="{{count}}" name="count">
+        <p class="exercise-count">repeat for <input type="number" class="form-control" value="{{count}}" name="count">
             <input class="form-control" type="text" value="{{unit}}" name="unit"></p>
         <textarea class="exercise-notes form-control" value="{{notes}}" rows="5" cols="25">{{notes}}</textarea>
         <div class="exer-buttons">
-            <button class="btn btn-success" type="submit">update</button>
-            <button class="exer-delete btn btn-danger" id="{{_id}}">delete</button>
+            <button class="btn btn-dark" type="submit">update</button>
+            <button class="exer-delete btn btn-dark" id="{{_id}}">delete</button>
         </div>
     </form>
 </div>
@@ -19,7 +19,7 @@
 {{else}}
 
 <div class="empty-exer">
-    <h2>add exercises to this workout!</h2>
+    <h2>add exercises to this training plan</h2>
 </div>
 
 {{/if}}
