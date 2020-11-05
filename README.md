@@ -29,7 +29,7 @@ Use this app to view, create, and track daily workouts to get your ready for the
 ## Usage
 1. Enter new workout at "enter new workout here" field
 2. Click 'enter new workout' button to enter new workout 
-3. Add different exercises to the workout inclusing sets, reps, weights, and notes pertaining to the workoug
+3. Add different exercises to the workout including sets, reps, weights, and notes pertaining to the workout
 4. Delete workout with 'delete workout' button
 5. Prepare for the end of this world with this workout app
 6. Enjoy! 
