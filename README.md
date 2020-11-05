@@ -23,19 +23,25 @@ Use this app to view, create, and track daily workouts to get your ready for the
 ## Installation
 1. Use 'git clone git@github.com:kbnewlon/workout-tracker.git' to clone the repo
 2. Install necessary dependencies with 'npm install'
+3. Make sure that you are running 'mongod' in the background to connect to database 
 3. Start the program with 'npm start' or 'node server.js'
 
 ## Usage
-1. Run mongod in terminal 
+1. Enter new workout at "enter new workout here" field
+2. Click 'enter new workout' button to enter new workout 
+3. Add different exercises to the workout inclusing sets, reps, weights, and notes pertaining to the workoug
+4. Delete workout with 'delete workout' button
+5. Prepare for the end of this world with this workout app
+6. Enjoy! 
 
 ## License
 Copyright (c) 2020, Kayla Newlon. (MIT License)
 
 ## Contributing 
-No guidelines at this time 
+No guidelines at this time. 
 
 ## Tests
-No tests available 
+Feel free to contact me for any test ideas. 
 
 ## Visuals
 ![screenshot of homepage](public/assets/images/screenshot_homepage.PNG);
@@ -51,21 +57,3 @@ To Repo: https://github.com/kbnewlon/workout-tracker
 Please contact me if you have any questions at:
 <br>Email: kayla.b.newlon@gmail.com
 <br>Github: https://github.com/kbnewlon
-
-
-
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
-
-  * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
-
-  * [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)
-
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the GitHub repository
